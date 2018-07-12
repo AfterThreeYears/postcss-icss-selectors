@@ -162,6 +162,7 @@ const composeExports = messages => {
 };
 
 module.exports = postcss.plugin(plugin, (options = {}) => (css, result) => {
+  debugger;
   const { icssImports, icssExports } = extractICSS(css);
   const generateScopedName =
     options.generateScopedName ||

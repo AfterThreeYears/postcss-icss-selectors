@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "babel --out-dir lib src",
-    "test": "jest --coverage",
+    "test": "nodemon --inspect-brk ./node_modules/.bin/jest ",
     "precommit": "lint-staged",
     "prepublish": "yarn run test && yarn run build"
   },

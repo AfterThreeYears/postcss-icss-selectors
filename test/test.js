@@ -57,7 +57,7 @@ const getMsg = (name, value) => ({
   value
 });
 
-test("scope selectors", () => {
+test.only("scope selectors", () => {
   return runCSS({
     fixture: `
       .foobar {}
