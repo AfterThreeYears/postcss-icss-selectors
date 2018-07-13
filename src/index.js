@@ -162,7 +162,6 @@ const composeExports = messages => {
 };
 
 module.exports = postcss.plugin(plugin, (options = {}) => (css, result) => {
-  debugger;
   const { icssImports, icssExports } = extractICSS(css);
   const generateScopedName =
     options.generateScopedName ||
@@ -202,5 +201,8 @@ module.exports = postcss.plugin(plugin, (options = {}) => (css, result) => {
   // contracts
   const composedExports = composeExports(result.messages);
   const exports = Object.assign({}, icssExports, composedExports);
+  debugger;
+  // 生成一个postcss.decl节点
   css.prepend(createICSSRules(icssImports, exports));
+  debugger;
 });
